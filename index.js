@@ -39,3 +39,28 @@ Increasor.addEventListener("click", (evt)=>{
 	}
 
 } )
+
+document.addEventListener("keydown", (evt)=> {
+	const val = parseInt(Counter.innerText)
+	const col = Counter.classList
+	switch(evt.key) {
+		case "ArrowRight":
+			Counter.innerText = val+1
+			if (val > -1) {
+			const col = Counter.classList;
+			col.remove("color-down")
+			col.add("color-up")}
+			break;
+		case "ArrowDown":
+			Counter.innerText = 0
+			col.remove("color-down","color-up")
+			break;
+		case "ArrowLeft":
+			Counter.innerText = val-1
+			if (val < 1) {
+			const col = Counter.classList;
+			col.remove("color-up")
+			col.add("color-down")}
+
+	}
+})
